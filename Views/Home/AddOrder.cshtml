@@ -1,0 +1,42 @@
+﻿@model NetMVC_EF_TPT.Models.OrderDetail
+
+@{
+    ViewData["Title"] = "Add Order";
+}
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddOrder">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="orderedItem" class="control-label">Ürün</label>
+                <input asp-for="orderedItem" class="form-control" />
+                <span asp-validation-for="orderedItem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="destAdress" class="control-label">Adres</label>
+                <input asp-for="destAdress" class="form-control" />
+                <span asp-validation-for="destAdress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="price" class="control-label">Ücret</label>
+                <input asp-for="price" class="form-control" />
+                <span asp-validation-for="price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="orderDate" class="control-label">Tarih</label>
+                <input asp-for="orderDate" class="form-control" />
+                <span asp-validation-for="orderDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
