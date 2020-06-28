@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace NetMVC_EF_TPT.Models
 {
-    public abstract class Orders
+    public class Orders
     {
         [Key]
-        public int orderId { get; set; }
+        public Guid orderId { get; set; }
         public DateTime orderDate { get; set; }
     }
 }

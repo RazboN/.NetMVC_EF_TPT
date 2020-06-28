@@ -21,10 +21,9 @@ namespace NetMVC_EF_TPT.Migrations
 
             modelBuilder.Entity("NetMVC_EF_TPT.Models.OrderDetail", b =>
                 {
-                    b.Property<int>("orderId")
+                    b.Property<Guid>("orderId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("destAdress")
                         .HasColumnType("nvarchar(max)");

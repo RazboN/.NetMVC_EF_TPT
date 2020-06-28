@@ -10,8 +10,8 @@ using NetMVC_EF_TPT.DB;
 namespace NetMVC_EF_TPT.Migrations
 {
     [DbContext(typeof(OrderContext))]
-    [Migration("20200628123307_init_TPT")]
-    partial class init_TPT
+    [Migration("20200628142440_TPT_init")]
+    partial class TPT_init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,10 +23,9 @@ namespace NetMVC_EF_TPT.Migrations
 
             modelBuilder.Entity("NetMVC_EF_TPT.Models.OrderDetail", b =>
                 {
-                    b.Property<int>("orderId")
+                    b.Property<Guid>("orderId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("destAdress")
                         .HasColumnType("nvarchar(max)");

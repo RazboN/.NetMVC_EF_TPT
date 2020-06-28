@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace NetMVC_EF_TPT.Migrations
 {
-    public partial class init_TPT : Migration
+    public partial class TPT_init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,8 +11,7 @@ namespace NetMVC_EF_TPT.Migrations
                 name: "OrderDetail",
                 columns: table => new
                 {
-                    orderId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                    orderId = table.Column<Guid>(nullable: false),
                     orderDate = table.Column<DateTime>(nullable: false),
                     orderedItem = table.Column<string>(nullable: true),
                     destAdress = table.Column<string>(nullable: true),

@@ -9,6 +9,10 @@ namespace NetMVC_EF_TPT.DB
         IConfiguration _iconfiguration;
         private const string connectionString = "Server=DESKTOP-6PBOME5;Database=MVC_EF;" +
             "Trusted_Connection=True;";
+
+        public DbSet<OrderDetail> siparisler { get; set; }
+        //public DbSet<OrderDetail> siparisDetay { get; set; }
+
         public OrderContext()
         {
         }
@@ -20,17 +24,15 @@ namespace NetMVC_EF_TPT.DB
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(_iconfiguration.GetSection("Data")
-                .GetSection("ConnectionString").Value);
-            //optionsBuilder.UseSqlServer(connectionString);
+            //optionsBuilder.UseSqlServer(_iconfiguration.GetSection("Data")
+            //    .GetSection("ConnectionString").Value);
+            optionsBuilder.UseSqlServer(connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Kargo>().ToTable("Kargo");
+            //modelBuilder.Entity<Orders>().ToTable("Orders");
             modelBuilder.Entity<OrderDetail>().ToTable("OrderDetail");
         }
-
-        public DbSet<OrderDetail> siparisler { get; set; }
     }
 }
